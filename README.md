@@ -11,9 +11,11 @@ To start backend there are two command that you have to run:
 To start frontend you have to write two commands:
 
   For yarn:
+
     1. yarn
     2. yarn start
 
   For npm:
+  
     1. npm i
     2. npm start
