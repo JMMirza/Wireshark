@@ -3,13 +3,21 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 import Select from 'react-select'
 // import Table from 'react-bootstrap/Table'
 import axios from "axios";
-const options = [
+// const options = [
+//   { value: 'wlp4s0', label: 'WLAN' },
+//   { value: 'lo', label: 'LOOPBACK' },
+//   { value: 'enp0s31f6', label: 'ETHERNET' },
+//   { value: 'virbr0', label: 'Virtual Bridge/NAT' },
+//   { value: 'bluetooth0', label: 'BLUETOOTH' },
+//   { value: 'udpdump', label: 'UDP Listener remote capture' },
+// ]
+const options =  [
   { value: 'Wi-Fi', label: 'WLAN' },
-  { value: 'lo', label: 'LOOPBACK' },
-  { value: 'enp0s31f6', label: 'ETHERNET' },
-  { value: 'virbr0', label: 'Virtual Bridge/NAT' },
-  { value: 'bluetooth0', label: 'BLUETOOTH' },
-  { value: 'udpdump', label: 'UDP Listener remote capture' },
+  { value: 'NPF_Loopback ', label: 'LOOPBACK' },
+  { value: 'Ethernet', label: 'ETHERNET' },
+  // { value: 'virbr0', label: 'Virtual Bridge/NAT' },
+  { value: 'Bluetooth', label: 'BLUETOOTH' },
+  // { value: 'udpdump', label: 'UDP Listener remote capture' },
 ]
 const SignUp=()=> {
    const [data, setData] = useState([])
