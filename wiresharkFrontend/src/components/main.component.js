@@ -4,7 +4,7 @@ import Select from 'react-select'
 // import Table from 'react-bootstrap/Table'
 import axios from "axios";
 const options = [
-  { value: 'wlp4s0', label: 'WLAN' },
+  { value: 'Wi-Fi', label: 'WLAN' },
   { value: 'lo', label: 'LOOPBACK' },
   { value: 'enp0s31f6', label: 'ETHERNET' },
   { value: 'virbr0', label: 'Virtual Bridge/NAT' },

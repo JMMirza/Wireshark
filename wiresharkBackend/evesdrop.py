@@ -8,7 +8,7 @@ def main(time,interface):
     dateString = str(date.strftime("%B"))  + str(date.year)+"-" + str(date.day) +"-" + str(current_time)
     fileCap = "./assets/cap/Captures" + dateString+ ".pcap"
     fileTxt = "./assets/txt/Captures" + dateString+ ".txt"
-    cliCommand ="tshark -i "+interface +" -T fields -e frame.time -e ip.src -e ip.dst -e ip.proto -e udp.dstport -e dns.qry.name -e dns.a -a duration:"+time+ " -w"+ fileCap+ "> "+fileTxt+ " -F pcap"
+    cliCommand ="tshark -i "+interface +" -T fields -e frame.time -e ip.src -e ip.dst -e ip.proto -e udp.dstport -e dns.qry.name -e dns.a -a duration:"+time+ " -w "+ fileCap+ " > "+fileTxt+ " -F pcap"
     # return cliCommand
     print(fileTxt)
     print(cliCommand)
