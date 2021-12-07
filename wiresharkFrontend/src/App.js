@@ -8,13 +8,10 @@ import Main from "./components/main.component";
 function App() {
   return (<Router>
     <div className="App">
-      <div className="outer">
-        <div className="inner">
           <Switch>
             <Route exact path='/' component={Main} />
           </Switch>
-        </div>
-      </div>
+        
     </div></Router>
   );
 }

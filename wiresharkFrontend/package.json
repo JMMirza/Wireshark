@@ -6,6 +6,7 @@
     "@emotion/react": "^11.7.0",
     "axios": "^0.24.0",
     "bootstrap": "^4.5.2",
+    "fs": "^0.0.1-security",
     "react": "^16.13.1",
     "react-bootstrap": "^2.0.3",
     "react-dom": "^16.13.1",

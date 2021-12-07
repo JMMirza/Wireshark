@@ -1,26 +1,17 @@
 import os
 from scapy.all import *
+import datetime
+import sys
+def main(time,interface):
+    date = datetime.datetime.now()
+    current_time = date.strftime("%H%M%S")
+    dateString = str(date.strftime("%B"))  + str(date.year)+"-" + str(date.day) +"-" + str(current_time)
+    fileCap = "./assets/cap/Captures" + dateString+ ".pcap"
+    fileTxt = "./assets/txt/Captures" + dateString+ ".txt"
+    cliCommand ="tshark -i "+interface +" -T fields -e frame.time -e ip.src -e ip.dst -e ip.proto -e udp.dstport -e dns.qry.name -e dns.a -a duration:"+time+ " -w"+ fileCap+ "> "+fileTxt+ " -F pcap"
+    # return cliCommand
+    print(fileTxt)
+    print(cliCommand)
+    # os.system(cliCommand)
 
-from getHTTPHeaders import HTTPHeaders, extractText
-data = "CapturesDecember2021-6-164357.cap"
-a = rdpcap(data)
-os.system("tshark  -T fields -e _ws.col.Info -e http -e frame.time -e  "
-          "data.data -w Eavesdrop_Data.pcap > Eavesdrop_Data.txt -c     1000")
-
-
-sessions = a.sessions()
-carved_texts = 1
-for session in sessions:
-    http_payload = ""
-    for packet in sessions[session]:
-        try:
-            if packet[TCP].dport == 80 or packet[TCP].sport == 80:
-                http_payload += str(packet[TCP].payload)
-        except:
-            pass
-        headers = HTTPHeaders(http_payload)
-    if headers is None:
-        continue
-    text = extractText(headers,http_payload)
-    if text is not None:
-         print (text)
+main(sys.argv[1],sys.argv[2])
