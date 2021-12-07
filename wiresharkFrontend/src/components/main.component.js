@@ -49,7 +49,7 @@ const SignUp=()=> {
                 })
             })
             .catch(err =>{ 
-               //  NotificationManager.error(err, 'Error');
+                NotificationManager.error(err.message, 'Error');
                 console.log(err)
             })
     }

@@ -26,7 +26,8 @@ const {
 
 app.post("/submit", (req, res) => {
     var dataToSend;
-    if(req.body.time==undefined||req.body.interface==undefined){
+    console.log(req.body.time,req.body.interface)
+    if(req.body.time==""||req.body.interface==""){
         return res.status(400).json("please provide every information")
     }
     const time = parseInt(req.body.time)
