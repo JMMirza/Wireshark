@@ -26,6 +26,9 @@ const {
 
 app.post("/submit", (req, res) => {
     var dataToSend;
+    if(req.body.time==undefined||req.body.interface==undefined){
+        return res.status(400).json("please provide every information")
+    }
     const time = parseInt(req.body.time)
     if (time < 15) {
         return res.status(400).json("Timeout should be greator than 15")
