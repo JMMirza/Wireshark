@@ -1,5 +1,5 @@
 import os
-from scapy.all import *
+# from scapy.all import *
 import datetime
 import sys
 def main(time,interface):
